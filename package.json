@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "lite-server -c=bs-config.json"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  },
+  "author": "Rosy Yang <rosy.yang@gmail.com>"
+}

@@ -1,0 +1,84 @@
+<!-- side menu -->
+<div class="sidenav" ng-class="sideMenuClass">
+  <a href="javascript:void(0)" class="closebtn" ng-click="toggleSideNav()"><span class="glyphicon" ng-class='layoutStateButton'></span></a>
+  <div>
+    <a ng-repeat="c in countries | filter : searchTerm" ng-href="#/workspace/{{c.id}}">
+      <span>{{c.id}}</span><span ng-If="layoutState === 'sideNavOpened'"> - {{c.name}}</span>
+    </a>
+  </div>
+</div>
+
+<!-- workspace -->
+<div class="worksapce" ng-class="worksapceClass">
+  <!-- workspace top bar -->
+  <div class="worksapce-pane heading-pane">
+    <form class="nav navbar-nav navbar-right navbar-form">
+      <div class="input-group">
+        <input name="searchTerm" ng-model="searchTerm" required minlength="2" type="text" class="form-control" placeholder="Search Country">
+      </div>
+    </form>
+  </div>
+  <!-- workspace info bar -->
+  <div class="worksapce-pane info-pane">
+    <a href="javascript:void(0)" class="nolink">Historic Population Growth - {{country.name}}</a>
+  </div>
+  <!-- workspace main panel -->
+  <div class="worksapce-pane main-pane">
+  <!-- workspace main panel chart pane -->
+	<div class="main-worksapce-pane">
+		<div class="worksapce-pane-heading">
+      <a ng-click="exportChart()"><span class="glyphicon glyphicon-floppy-disk"></span> Export</a>
+      <a ng-click="printChart()"><span class="glyphicon glyphicon-print"></span> Print</a>
+		</div>
+		<div class="main-worksapce-pane-body">
+			<div class="workspace-pane-body">
+
+        <div class="row">
+          <tabs>
+            <pane title="Area Chart">
+
+              <div id="linechart"></div>
+
+            </pane>
+            <pane title="Column CHart">
+
+              <div id="barchart"></div>
+
+            </pane>
+          </tabs>
+        </div>
+
+			</div>
+		</div>
+	</div>
+  <!-- workspace main panel meta data pane -->
+	<div class="main-meta-pane">
+		<div class="worksapce-pane-heading">
+			<a href="#" class="nolink"><span class="glyphicon glyphicon-list-alt"></span> Country Stats</a>
+		</div>
+		<div class="main-meta-pane-body">
+			<div class="workspace-pane-body">
+				<div class="meta-detail-pane">
+
+          <table class="table table-hover">
+          <thead>
+            <tr>
+            <th>Year</th>
+            <th>Population</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="y in population">
+              <td>{{y.x}}</td>
+              <td>{{y.y | number}}</td>
+            </tr>
+          </tbody>
+          </table>
+
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+

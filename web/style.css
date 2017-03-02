@@ -1,0 +1,183 @@
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+    overflow: hidden;
+}
+
+a {
+    cursor: pointer;
+}
+
+.nolink {
+    cursor: none;
+}
+
+.navbar-right {
+    margin-right: 16px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 96px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    padding-top: 60px;
+    -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, .175);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .175);
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    transition: 0.5s linear;
+}
+.sidenav-open {
+    width: 250px;
+}
+.sidenav-close {
+    width: 96px;
+}
+
+.sidenav a {
+    padding: 18px 8px 18px 24px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+    display: block;
+    transition: 0.3s;
+    height: 24px;
+    overflow: hidden;
+}
+
+.sidenav a:hover {
+    color: red;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    font-size: 16px;
+    padding: 24px 8px 24px 32px;
+}
+
+.worksapce {
+    overflow: hidden;
+    padding: 0;
+    margin-left: 96px;
+    transition: 0.5s linear;
+}
+.ws-sidenav-open {
+    margin-left: 250px;
+}
+.ws-sidenav-close {
+    margin-left: 96px;
+}
+.worksapce-pane {
+    padding: 8px 8px 8px 8px;
+}
+
+.heading-pane {
+    height: 60px;
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 7, .175);
+    box-shadow: 0 0 2px rgba(0, 0, 7, .175);
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    overflow: hidden;
+}
+
+.info-pane {
+    height: 36px;
+    border-bottom: 2px solid #337ab7;
+    overflow: hidden;
+}
+
+.info-pane a, .info-pane span {
+    padding: 2px 0 2px 2px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+    display: inline-block;
+    transition: 0.3s;
+    height: 28px;
+    overflow: hidden;
+}
+
+.info-pane a:hover, .offcanvas a:focus{
+    color: red;
+}
+
+.main-pane {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.main-worksapce-pane {
+    margin-top: 0;
+    margin-right: 300px;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    -webkit-box-shadow: 0;
+    box-shadow: 0;
+}
+
+.worksapce-pane-heading {
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    background-color: #ddd;
+}
+
+.worksapce-pane-heading  a {
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #333;
+    display: inline-block;
+    transition: 0.3s;
+    height: 32px;
+    overflow: hidden;
+}
+
+.worksapce-pane-heading a:hover {
+    color: red;
+}
+
+.main-worksapce-pane-body {
+    height: calc(100vh - 144px);
+    overflow-y: scroll;
+}
+
+.main-meta-pane {
+    position: fixed;
+    width: 300px;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 96px;
+    border: 0;
+    border-radius: 0;
+    -webkit-box-shadow: 0;
+    box-shadow: 0;
+}
+
+.main-meta-pane-body {
+    height: calc(100vh - 144px);
+    overflow-y: scroll;
+}
+
+.workspace-pane-body {
+    margin: 8px;
+}
+
+.meta-detail-pane {
+    margin: 8px;
+}
