@@ -4,15 +4,15 @@
     angular.module('app')
 
     .controller('WorkspaceController', ['$scope', 'apiUrls', 'dataService', '$routeParams', function($scope, apiUrls, dataService, $routeParams) {
-        // first load all countries data
-        dataService.getCountries(apiUrls.countries)
+        // the path param of country id
+        var countryId = $routeParams.country;
+        
+        // first load the country detail data
+        dataService.getCountries(apiUrls.countries + '/' + countryId)
         .subscribe(cs => {
-            $scope.countries = cs;
 
-            var countryId = $routeParams.country;
-
-            if (countryId) {
-                $scope.country = $scope.countries.find(c => c.id === countryId);
+            if (cs && cs.length > 0) {
+                $scope.country = cs[0];
             }
             // ready to load population data for country
             if ($scope.country) {

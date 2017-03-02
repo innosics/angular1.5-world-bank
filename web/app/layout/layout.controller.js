@@ -3,7 +3,8 @@
 
     angular.module('app')
 
-    .controller('LayoutController', ['$scope', 'dataService', function($scope, dataService) {
+    .controller('LayoutController', ['$scope', 'apiUrls', 'dataService', function($scope, apiUrls, dataService) {
+
         // layoutState is state of sidebar
         $scope.layoutState = 'sideNavOpened';
         // layoutStateButton controls icon of sidebar open/close button 
@@ -11,6 +12,12 @@
         // sideMenuClass and worksapceClass are classes to animate the sidebar and workspace
         $scope.sideMenuClass = 'sidenav-open';
         $scope.worksapceClass = 'ws-sidenav-open';
+
+        // first load all countries data
+        dataService.getCountries(apiUrls.countries)
+        .subscribe(cs => {
+            $scope.countries = cs;
+        });
 
         // toggle sidebar
         $scope.toggleSideNav = function() {
